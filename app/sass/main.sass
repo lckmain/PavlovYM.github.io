@@ -1,0 +1,269 @@
+@import "bourbon"
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "helper"
+
+*::-webkit-input-placeholder
+  color: #666
+  opacity: 1
+
+*:-moz-placeholder
+  color: #666
+  opacity: 1
+
+*::-moz-placeholder
+  color: #666
+  opacity: 1
+
+*:-ms-input-placeholder
+  color: #666
+  opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+  color: #666
+body input:required:valid,
+body textarea:required:valid
+  color: #666
+
+html, body
+  height: 100%
+
+body
+  font-size: 16px
+  min-width: 320px
+  width: 100%
+  position: relative
+  line-height: 1.6
+  font-family: "MyriadPro", sans-serif
+  overflow-x: hidden
+  background-color: $body-color
+
+.wrapper
+  display: table
+  height: 100%
+  width: 100%
+
+.content
+  display: table-row
+  height: 100%
+
+//TOP MENU
+.nav-wrapper
+
+.top-nav
+  max-height: 115px
+  background-image: url(../img/top_line-bg.jpg)
+  background-position: center
+.navbar
+  border-radius: 0
+  margin: 0
+.top-nav_content
+  width: 100%
+  padding: 17px 0
+  @extend .space-around
+
+  .dropdown
+    color: $text-color
+    .top-nav_drpdown_text
+      padding-left: 10px
+    .top-nav_drpdown
+      background-color: rgba(255, 255, 255, 0.2)
+      color: $text-color
+      width: 200px
+      border-radius: 5px
+      padding: 10px
+      .caret
+        margin-left: 60px
+        transform: scale(1.5)
+        color: $black
+
+.top-nav_content
+  .top-manager
+    background-color: $white
+    border-radius: 30px
+    padding: 2px 10px
+    @extend .space-around
+    img, ul
+      display: inline-block
+    ul
+      list-style: none
+      .manager-top-text
+        color: $accent
+        font-size: em(14px)
+      li
+        span
+          padding-left: 30px
+    .comment_top
+      position: relative
+      top: 15px
+      a
+        img
+          width: 90%
+    .comment_summ
+      position: relative
+      top: -10px
+      left: 20px
+.top-nav_content
+  .top-form
+    .form-group
+      .form-control
+        background-color: rgba(255, 255, 255, 0.2)
+        border-radius: 30px
+        border: none
+        width: 320px
+        height: 60px
+        padding: 0 0 0 30px
+        &::placeholder
+          color: $white
+          font-weight: bold
+          font-size: em(18px)
+    .btn-default
+      background-color: inherit
+      border: none
+      color: $white
+      position: relative
+      left: -60px
+      font-size: em(25px)
+      &:hover, &:focus, &:active
+        box-shadow: none
+
+.top-bell, .top-cog
+  i
+    color: $white
+    font-size: em(28px)
+
+.top-bell
+  position: relative
+  .bell_summ
+    position: absolute
+    top: -20px
+    left: 10px
+    span
+      font-size: em(16px)
+.exit
+  span
+    color: $white
+    vertical-align: middle
+    padding-left: 10px
+
+//SECONDARY MENU
+
+.secondary_nav-menu
+  max-height: 85px
+  width: 100%
+  background-image: url(../img/secondary_line-bg.jpg)
+  background-position: center
+
+.secondary-menu
+  @extend .space-around
+  list-style: none
+  max-height: 85px
+  line-height: 85px
+  font-size: em(20px)
+  box-sizing: border-box
+  margin: 0
+  li
+    a
+      color: $white
+      text-decoration: none
+  .active
+    position: relative
+    &::before
+      position: absolute
+      content: ''
+      bottom: 0
+      left: -20%
+      width: 140%
+      height: 4px
+      background-color: $accent
+      border-radius: 2px
+.tab-content
+  width: 100%
+  max-height: 300px
+  padding: 0 10%
+  background-image: url(../img/tab_content-bg.jpg)
+  background-position: center
+  .tab-pane
+    height: 300px
+    ul
+      list-style: none
+  .home-content_wrapp
+    @extend .space-around
+    ul
+      display: block
+      position: relative
+      top: 50px
+      li
+        position: relative
+        margin-bottom: 20px
+        a
+          font-size: em(20px)
+          color: $white
+          text-decoration: none
+          transition: all 0.4s
+          &:hover, &:focus
+            color: $accent
+            text-decoration: underline
+        .pay-summ, .documents-summ, .refunds-summ, .mail-summ
+          .summ
+            position: absolute
+            right: 20px
+            top: 5px
+        .documents-summ
+          .summ
+            right: -45px
+        .refunds-summ
+          .summ
+            right: 70px
+
+//FOOTER
+.footer
+  background-color: #fff
+footer
+  padding: 45px 0 75px 0
+  @extend .space-around
+  align-items: flex-start
+  ul
+    font-size: em(20px)
+    list-style: none
+    li
+    .title-footer
+      color: $black
+      font-weight: 600
+      margin-bottom: 20px
+    a
+      color: $text-color
+      &:hover
+        color: $text-color
+        text-decoration: none
+footer
+  .rights
+    position: relative
+    top: 51px
+    color: $black
+    li
+      position: relative
+      &::before
+        position: absolute
+        top: 0
+        left: -25px
+        content: "\f1f9"
+        font-family: 'FontAwesome'
+        font-size: em(16px)
+.mobile-applications
+  .applications-title
+    text-align: right
+    display: block
+    margin-bottom: 10px
+    a
+      color: #1a8a94
+      text-decoration: underline
+  li
+    display: inline-block
+
+
+
+@import "home"
+@import "media" // Всегда в конце
